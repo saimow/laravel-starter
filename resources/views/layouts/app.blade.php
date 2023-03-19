@@ -99,7 +99,7 @@
     </div>
 
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
-    @vite(['resources/sass/app.scss', 'resources/sass/style.scss'])
+    @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/sass/style.scss'])
 
     @stack('scripts')
 </body>
