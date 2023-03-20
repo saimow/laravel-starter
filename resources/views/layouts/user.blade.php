@@ -32,10 +32,31 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                 </ul>
+
+                @guest
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
+                    </ul>
+                @endguest
+                
+                @auth    
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="nav-link" style="outline:none; border:0px; background:transparent;">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                @endauth
             </div>
         </div>
     </nav>

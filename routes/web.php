@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/register', [Auth\RegisterController::class, 'index'])->name('register');
+Route::post('/register', [Auth\RegisterController::class, 'store'])->name('register');
+
+Route::get('/login', [Auth\LoginController::class, 'index'])->name('login');
+Route::post('/login', [Auth\LoginController::class, 'store'])->name('login');
+
+Route::post('/logout', [Auth\LogoutController::class, 'store'])->name('logout');
 
 Route::get('/admin', [DashboardController\Index::class, 'index'])->name('admin.dashboard');
 
