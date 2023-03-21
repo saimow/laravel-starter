@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController\Index::class, 'index'])->name('home');
+
 Route::get('/register', [Auth\RegisterController::class, 'index'])->name('register');
 Route::post('/register', [Auth\RegisterController::class, 'store'])->name('register');
 
@@ -24,6 +26,15 @@ Route::post('/login', [Auth\LoginController::class, 'store'])->name('login');
 
 Route::post('/logout', [Auth\LogoutController::class, 'store'])->name('logout');
 
-Route::get('/admin', [DashboardController\Index::class, 'index'])->name('admin.dashboard');
-
-Route::get('/', [HomeController\Index::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth'], function(){
+    
+    Route::group([
+        'prefix' => 'admin',
+        'as' => 'admin.',
+        'middleware' => 'admin',
+    ], function(){
+    
+        Route::get('/', [DashboardController\Index::class, 'index'])->name('dashboard');
+    
+    });
+});
