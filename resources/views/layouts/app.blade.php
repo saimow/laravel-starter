@@ -46,21 +46,15 @@
                                 <img class="avatar-img" src="/imgs/user.svg" >
                             </div>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end pt-0">
+                        <div class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" href="">
                                 <svg class="icon me-2">
                                     <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
                                 </svg>
-                                {{ __('My profile') }}
-                            </a>
-                            <a class="dropdown-item" href="">
-                                <svg class="icon me-2">
-                                    <use xlink:href="{{ asset('icons/coreui.svg#cil-settings') }}"></use>
-                                </svg>
-                                {{ __('Settings') }}
+                                {{ __('My Account') }}
                             </a>
                             <div class="dropdown-divider"></div>
-                            <form method="POST" action="">
+                            <form action="{{ route('logout') }}" method="POST">
                                 @csrf
                                 <a class="dropdown-item" href=""
                                 onclick="event.preventDefault(); this.closest('form').submit();">
@@ -81,16 +75,16 @@
 
         </header>
         <div class="body flex-grow-1 px-3">
-            <div class="container-lg">
+            <div class="container-fluid mb-5">
                 @yield('content')
             </div>
         </div>
         <footer class="footer">
-            <div>
-                <a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> &copy; 2021 creativeLabs.
+            <div class="">
+                Made By <a href="https://github.com/saimow" target="_blank">Saimo</a>
             </div>
             <div class="ms-auto">
-                Powered by&nbsp;<a href="https://coreui.io/bootstrap/ui-components/">CoreUI UI Components</a>
+                Powered by&nbsp;<a href="https://coreui.io/bootstrap/ui-components" target="_blank">CoreUI UI Components</a>
             </div>
         </footer>
     </div>

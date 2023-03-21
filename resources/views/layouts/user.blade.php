@@ -52,7 +52,9 @@
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button class="nav-link" style="outline:none; border:0px; background:transparent;">Logout</button>
+                                <a class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">
+                                    Logout
+                                </a>
                             </form>
                         </li>
                     </ul>
