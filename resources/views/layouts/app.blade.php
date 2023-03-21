@@ -47,7 +47,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="{{ route('admin.account') }}">
                                 <svg class="icon me-2">
                                     <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
                                 </svg>
