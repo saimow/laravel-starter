@@ -93,6 +93,8 @@
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/sass/style.scss'])
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @stack('scripts')
 </body>
 </html>
