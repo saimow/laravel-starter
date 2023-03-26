@@ -26,6 +26,12 @@ Route::post('/register', [Auth\RegisterController::class, 'store'])->name('regis
 Route::get('/login', [Auth\LoginController::class, 'index'])->name('login');
 Route::post('/login', [Auth\LoginController::class, 'store'])->name('login');
 
+Route::get('/forgot-password', [Auth\ForgotPasswordController::class, 'index'])->name('password.forgot');
+Route::post('/forgot-password', [Auth\ForgotPasswordController::class, 'store'])->name('password.forgot');
+
+Route::get('/reset-password', [Auth\ResetpasswordController::class, 'index'])->name('password.reset');
+Route::post('/reset-password', [Auth\ResetpasswordController::class, 'update'])->name('password.reset');
+
 Route::post('/logout', [Auth\LogoutController::class, 'store'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function(){
