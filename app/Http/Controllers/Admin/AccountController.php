@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin\AccountController;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class Index extends Controller
+class AccountController extends Controller
 {
     public function index(){
         return view('admin.account');
