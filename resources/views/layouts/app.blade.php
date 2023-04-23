@@ -7,6 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
@@ -94,6 +95,7 @@
     @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/sass/style.scss'])
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     @stack('scripts')
 </body>
