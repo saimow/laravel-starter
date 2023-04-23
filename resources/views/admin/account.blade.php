@@ -132,28 +132,10 @@
     </div>
 </div>
 
-{{-- Bootstrap Toast --}}
 @if (session('success'))    
-    <div class="toast-container position-fixed top-0 end-0 p-3">
-        <div class="toast align-items-center text-bg-success border-0" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" data-coreui-delay="10000">
-            <div class="d-flex">
-                <div class="toast-body">
-                    {{ session('success') }}
-                </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-coreui-dismiss="toast" aria-label="Close"></button>
-            </div>
-        </div>
-    </div>
-    
-    @push('scripts')
-        <script>
-            const liveToast = document.getElementById('liveToast')
-            const toast = new coreui.Toast(liveToast)
-            toast.show()
-        </script>
-    @endpush
-
+    <x-toast type="success">
+        {{ session('success') }}
+    </x-toast>
 @endif
-{{-- ---- --}}
 
 @endsection
